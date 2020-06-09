@@ -103,9 +103,13 @@ https://leetcode.com/problems/single-number/
 code:
 
   def singleNumber(self, nums: List[int]) -> int:
+        
         bitmask = 0                  #initial state
+ 
         for i in nums:               
-            bitmask^=i               
+        
+          bitmask^=i               
+        
         return bitmask
           
 Explanation:
@@ -121,6 +125,7 @@ https://leetcode.com/problems/single-number-ii/
 code:
 
   def singleNumber(self, nums: List[int]) -> int:
+  
         pre_bitone = 0   #store every bit which appears once(3*n+1)
         pre_bittwo = 0   #store every bit which appears twice(3*n+2,i called it once and twice because if bits appear 3 times it will be deleted)
         for i in nums:
