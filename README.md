@@ -24,7 +24,8 @@ https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-othe
 
 Why we need to use Bitmask to handle some difficult problems?
 Reason 1: bit manipulation is faster than normal operation such as '+-*/'
-Reason 2: bitmask can help us record the state. if you use an int variable or boolean variable to store the the state, it will cost 4 bytes, so you use bit 0/1 to store the state, that will save lots of space.
+Reason 2: bitmask can help us record the state. if you use an int variable or boolean variable to store the the state, it will cost 4, bytes, so you use bit 0/1 to store the state, that will save lots of space.
+
 
 Some bitmask's operation:
 1.Record state
