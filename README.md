@@ -65,6 +65,7 @@ I will show how transfer state work and explain it in the later of the article.
 
 
 Later I will show some code for the bitmask excersices and explain why these works and helped a lot.
+
 1.
 Leetcode single number (explain how transfer state works)
 https://leetcode.com/problems/single-number/
