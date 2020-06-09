@@ -24,8 +24,7 @@ https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-othe
 
 Why we need to use Bitmask to handle some difficult problems?
 Reason 1: bit manipulation is faster than normal operation such as '+-*/'
-Reason 2: bitmask can help us record the state. if you use an int variable or boolean variable to store the the state, it will cost 4 bytes,
-so you use bit 0/1 to store the state, that will save lots of space.
+Reason 2: bitmask can help us record the state. if you use an int variable or boolean variable to store the the state, it will cost 4 bytes, so you use bit 0/1 to store the state, that will save lots of space.
 
 Some bitmask's operation:
 1.Record state
@@ -97,16 +96,18 @@ code:
 
 Explanation:
 cur_bittwo means when we retrieve this number(i), which bits appears twice(3*n), so we need to consider about this: 
-1.those bits who already appears twice and appear in this number(i) should be deleted, because this is its third appearance, so we need use 
-(pre_bittwo&i) to find which bits appear 3 times, and use pre_bittwo^(pre_bittwo&i) to keep those bits appears twice and delete the bits appears 3 times. 
-2.we have some bits appears once and also appears in this number(i), so it appears twice after this number, we need to find them. so we use 
-(pre_bitone&i) to find all bits appears once and also appears in this number(i). 
+1.those bits who already appears twice and appear in this number(i) should be deleted, because this is its third appearance, so we need use (pre_bittwo&i) to find which bits appear 3 times, and use pre_bittwo^(pre_bittwo&i) to keep those bits appears twice and delete the bits appears 3 times. 
+
+2.we have some bits appears once and also appears in this number(i), so it appears twice after this number, we need to find them. so we use (pre_bitone&i) to find all bits appears once and also appears in this number(i). 
+
 3.we use 'or |' to combine those bits in step 1 and step 2 to find all bits appears twice.
 
 cur_bitone means when we retrieve this number(i), which bits appear once(3*n+1), so we need to consider about this:
 1. we only need to find all bits which appears 0(3*n) times, also find those bits which appears once(3*n+1) and dont appear in this number. 
+
 2. those bits who appears twice before this number(i) should be removed from our thinking, because it only can appears twice or 0 times
 (3*n+2 times and 3*n times). So we use pre_bittwo to find all these bits, then use (~pre_bittwo&i) to remove these bits from i.
+
 3. like we do in cur_bittwo, using pre_bitone^(~pre_bittwo&i) to find all bits appears once.
 
 Finally, the pre_bitone is the answer(appears once)
