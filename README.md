@@ -28,39 +28,69 @@ Reason 2: bitmask can help us record the state. if you use an int variable or bo
 
 
 Some bitmask's operation:
+
 1.Record state
+
 you can initiate the bitmask as 00000000 if you have 8 states, and use 'or |' operation to save your state.
+
 eg.
+
 bitmask = 00000000
+
 new_state1 = 00001000
+
 bitmask | new_state1 = 00001000 which means the fourth state have been recorded
+
 new_state2 = 00010001
+
 bitmask | new_state2 = 00011001 which means the fifth and first state have been recorded
 
 2. query state
+
 you can use 0..1..0 and 'and &' operation to query the states, the position of 1 means which state you want to query.
+
 eg.
+
 bitmask = 01011111
+
 query_state1 = 00001000
+
 bitmask & query_state1 = 00001000 means the fourth state was recorded
+
 query_state2 = 10000000
+
 bitmask & query_state2 = 00000000 means the eighth state was not recorded
 
+
 3. delete state
+
 you can use 1..0..1 and 'and &' operation to query the states, the position of 1 means which state you want to query.
+
 eg.
+
 bitmask = 10100110
+
 delete_state1 = 11011111
+
 bitmask & delete_state1 = 10000110 means the sixth state was deleted
+
 delete_state2 = 11111011
+
 bitmask & delete_state2 = 10000011 means the third state was deleted
 
+
 4. set,keep and delete state
+
 you can use 'XOR ^' operation to set,keep and delete the states
+
 eg.
+
 bitmask = 10101111
+
 transfer_state = 00010110
+
 bitmask ^ transfer_state = 10111001
+
 
 I will show how transfer state work and explain it in the later of the article.
 
