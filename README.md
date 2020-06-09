@@ -96,8 +96,7 @@ I will show how transfer state work and explain it in the later of the article.
 
 Later I will show some code for the bitmask excersices and explain why these works and helped a lot.
 
-1.
-Leetcode single number (explain how transfer state works)
+1. Leetcode single number (explain how transfer state works)
 https://leetcode.com/problems/single-number/
 code:
   def singleNumber(self, nums: List[int]) -> int:
@@ -107,12 +106,12 @@ code:
         return bitmask
           
 Explanation:
+
 In this question, we know every elements will appear twice and only one element appear once, which means every bit will appear 2*n times
 and only the one elements' bit will appear 2*n+1 times. So we need to set and keep the state when the bit appear 2*n+1 times and delete
 state when bit appear 2*n times.
 
-2.
-Leetcode single number 2
+2. Leetcode single number 2
 https://leetcode.com/problems/single-number-ii/
 code:
   def singleNumber(self, nums: List[int]) -> int:
@@ -126,7 +125,9 @@ code:
         return pre_bitone
 
 Explanation:
+
 cur_bittwo means when we retrieve this number(i), which bits appears twice(3*n), so we need to consider about this: 
+
 1.those bits who already appears twice and appear in this number(i) should be deleted, because this is its third appearance, so we need use (pre_bittwo&i) to find which bits appear 3 times, and use pre_bittwo^(pre_bittwo&i) to keep those bits appears twice and delete the bits appears 3 times. 
 
 2.we have some bits appears once and also appears in this number(i), so it appears twice after this number, we need to find them. so we use (pre_bitone&i) to find all bits appears once and also appears in this number(i). 
@@ -134,6 +135,7 @@ cur_bittwo means when we retrieve this number(i), which bits appears twice(3*n),
 3.we use 'or |' to combine those bits in step 1 and step 2 to find all bits appears twice.
 
 cur_bitone means when we retrieve this number(i), which bits appear once(3*n+1), so we need to consider about this:
+
 1. we only need to find all bits which appears 0(3*n) times, also find those bits which appears once(3*n+1) and dont appear in this number. 
 
 2. those bits who appears twice before this number(i) should be removed from our thinking, because it only can appears twice or 0 times
