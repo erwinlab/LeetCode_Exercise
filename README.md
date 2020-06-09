@@ -97,8 +97,11 @@ I will show how transfer state work and explain it in the later of the article.
 Later I will show some code for the bitmask excersices and explain why these works and helped a lot.
 
 1. Leetcode single number (explain how transfer state works)
+
 https://leetcode.com/problems/single-number/
+
 code:
+
   def singleNumber(self, nums: List[int]) -> int:
         bitmask = 0                  #initial state
         for i in nums:               
@@ -112,8 +115,11 @@ and only the one elements' bit will appear 2*n+1 times. So we need to set and ke
 state when bit appear 2*n times.
 
 2. Leetcode single number 2
+
 https://leetcode.com/problems/single-number-ii/
+
 code:
+
   def singleNumber(self, nums: List[int]) -> int:
         pre_bitone = 0   #store every bit which appears once(3*n+1)
         pre_bittwo = 0   #store every bit which appears twice(3*n+2,i called it once and twice because if bits appear 3 times it will be deleted)
