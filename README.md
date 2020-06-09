@@ -6,12 +6,19 @@ Concluded some bit manipulation and bitmask exercises, difficulty goes from low 
 
 
 https://leetcode.com/problems/number-of-1-bits/ (easy)
+
 https://leetcode.com/problems/single-number/ (easy)
+
 https://leetcode.com/problems/sum-of-two-integers/ (highly recommend)
+
 https://leetcode.com/problems/bitwise-and-of-numbers-range/submissions/ (medium)
+
 https://leetcode.com/problems/bitwise-ors-of-subarrays/ (medium) (highly recommend)
+
 https://leetcode.com/problems/single-number-ii/ (medium) (highly recommend, even u can think how to solve the problem when every elements appear 4,5,6 times and only one appers 1 time, how can u solve it)
+
 https://leetcode.com/problems/single-number-iii/ (medium) (highly recommend)
+
 https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/ (hard) (highly recommend)
 
 
